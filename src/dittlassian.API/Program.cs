@@ -19,7 +19,24 @@ namespace dittlassian.API
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                   .UseStartup<Startup>()
-                   .Build();
+                .ConfigureAppConfiguration((context, builder) =>
+                {
+                    var env = context.HostingEnvironment;
+
+                    builder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                        .AddJsonFile("bot.config.json", optional: false, reloadOnChange: true);
+
+                    if (env.IsDevelopment())
+                    {
+                        builder.AddJsonFile("bot.local.config.json", optional: false, reloadOnChange: true);
+                    }
+
+                    builder.AddEnvironmentVariables();
+
+                    if (args != null)
+                        builder.AddCommandLine(args);
+                })
+                .UseStartup<Startup>()
+                .Build();
     }
 }
