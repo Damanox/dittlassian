@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dittlassian.API", "dittlassian.API\dittlassian.API.csproj", "{F40FB182-A9A1-4C9A-8EC6-961DDDAACF5C}"
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dittlassian.API", "dittlassian.API\dittlassian.API.csproj", "{F40FB182-A9A1-4C9A-8EC6-961DDDAACF5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dittlassian.Objects", "dittlassian.Objects\dittlassian.Objects.csproj", "{2933EC50-0449-4F54-A022-38DD16A53C70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +17,15 @@ Global
 		{F40FB182-A9A1-4C9A-8EC6-961DDDAACF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F40FB182-A9A1-4C9A-8EC6-961DDDAACF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F40FB182-A9A1-4C9A-8EC6-961DDDAACF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2933EC50-0449-4F54-A022-38DD16A53C70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2933EC50-0449-4F54-A022-38DD16A53C70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2933EC50-0449-4F54-A022-38DD16A53C70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2933EC50-0449-4F54-A022-38DD16A53C70}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {75B7BC2E-1135-4CA1-BB4C-D601DB5CA22D}
 	EndGlobalSection
 EndGlobal

@@ -1,2 +1,18 @@
 ﻿{
+  "discord": {
+    "serverId": "",
+    "botId": "",
+    "botToken": ""
+  },
+  "rules": [
+    {
+      "source": 0,
+      "condition": "",
+      "channelIds": []
+    }
+  ],
+  "common": {
+    "pullRequestTemplate": "",
+    "issueTemplate": ""
+  }
 }
