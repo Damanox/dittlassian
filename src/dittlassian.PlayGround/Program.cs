@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Dynamic;
+using dittlassian.Objects.Jira;
+using dittlassian.Utilities.ConditionParser;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace dittlassian.PlayGround
@@ -9,7 +13,7 @@ namespace dittlassian.PlayGround
         {
             try
             {
-                Console.WriteLine("Hello World!");
+                /*Console.WriteLine("Hello World!");
 
                 var services = new ServiceCollection();
 
@@ -19,7 +23,28 @@ namespace dittlassian.PlayGround
 
                 var provider = services.BuildServiceProvider();
 
-                var di = provider.GetService<DiTest>();
+                var di = provider.GetService<DiTest>();*/
+
+                var webhook = new JiraWebHook
+                {
+                    Timestamp = 32834834,
+                    Issue = new Issue
+                    {
+                        Id = "BB-1000",
+                        Fields = new Fields
+                        {
+                            Workratio = 3,
+                            CustomFields = new ExpandoObject()
+                        }
+                    }
+                };
+
+                var temp = webhook.Issue.Fields.CustomFields as IDictionary<string, object>;
+
+                temp["test"] = "Test";
+
+                var res = ConditionParserUtil.Parse("Issue.Fields.test == 'Test'", webhook);
+                
                 var z = 0;
             }
             catch (Exception ex)

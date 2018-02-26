@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Dynamic;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace dittlassian.Objects.Jira
 {
@@ -423,7 +422,7 @@ namespace dittlassian.Objects.Jira
         public Worklog Worklog { get; set; }
 
         [JsonExtensionData]
-        public Dictionary<string, JToken> CustomFields;
+        public ExpandoObject CustomFields { get; set; }
     }
 
     public class Issue

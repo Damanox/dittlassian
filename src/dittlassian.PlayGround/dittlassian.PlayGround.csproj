@@ -1,12 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
   </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\dittlassian.Objects\dittlassian.Objects.csproj">
+      <Project>{2933EC50-0449-4F54-A022-38DD16A53C70}</Project>
+      <Name>dittlassian.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\dittlassian.Utilities\dittlassian.Utilities.csproj">
+      <Project>{872E7FAB-BDA8-485E-B8B9-5746761EBC6C}</Project>
+      <Name>dittlassian.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
