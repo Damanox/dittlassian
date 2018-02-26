@@ -15,6 +15,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\dittlassian.DI\dittlassian.DI.csproj" />
     <ProjectReference Include="..\dittlassian.Objects\dittlassian.Objects.csproj" />
   </ItemGroup>
   <ItemGroup>
