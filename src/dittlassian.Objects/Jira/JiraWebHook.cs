@@ -186,62 +186,6 @@ namespace dittlassian.Objects.Jira
     {
     }
 
-    public class Creator
-    {
-
-        [JsonProperty("self")]
-        public string Self { get; set; }
-
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("key")]
-        public string Key { get; set; }
-
-        [JsonProperty("emailAddress")]
-        public string EmailAddress { get; set; }
-
-        [JsonProperty("avatarUrls")]
-        public AvatarUrls AvatarUrls { get; set; }
-
-        [JsonProperty("displayName")]
-        public string DisplayName { get; set; }
-
-        [JsonProperty("active")]
-        public bool Active { get; set; }
-
-        [JsonProperty("timeZone")]
-        public string TimeZone { get; set; }
-    }
-
-    public class Reporter
-    {
-
-        [JsonProperty("self")]
-        public string Self { get; set; }
-
-        [JsonProperty("name")]
-        public string Name { get; set; }
-
-        [JsonProperty("key")]
-        public string Key { get; set; }
-
-        [JsonProperty("emailAddress")]
-        public string EmailAddress { get; set; }
-
-        [JsonProperty("avatarUrls")]
-        public AvatarUrls AvatarUrls { get; set; }
-
-        [JsonProperty("displayName")]
-        public string DisplayName { get; set; }
-
-        [JsonProperty("active")]
-        public bool Active { get; set; }
-
-        [JsonProperty("timeZone")]
-        public string TimeZone { get; set; }
-    }
-
     public class Aggregateprogress
     {
 
@@ -262,11 +206,11 @@ namespace dittlassian.Objects.Jira
         public int Total { get; set; }
     }
 
-    public class Comment
+    public class CommentData
     {
 
         [JsonProperty("comments")]
-        public IList<object> Comments { get; set; }
+        public IList<Comment> Comments { get; set; }
 
         [JsonProperty("maxResults")]
         public int MaxResults { get; set; }
@@ -277,7 +221,32 @@ namespace dittlassian.Objects.Jira
         [JsonProperty("startAt")]
         public int StartAt { get; set; }
     }
+    
+    public class Comment
+    {
+        [JsonProperty("self")]
+        public string Self { get; set; }
 
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        [JsonProperty("author")]
+        public User Author { get; set; }
+
+        [JsonProperty("body")]
+        public string Body { get; set; }
+
+        [JsonProperty("updateAuthor")]
+        public User UpdateAuthor { get; set; }
+
+        [JsonProperty("created")]
+        public DateTime Created { get; set; }
+
+        [JsonProperty("updated")]
+        public DateTime Updated { get; set; }
+    }
+
+    
     public class VotesData
     {
 
@@ -291,7 +260,7 @@ namespace dittlassian.Objects.Jira
         public bool HasVoted { get; set; }
     }
 
-    public class Worklog
+    public class WorklogData
     {
 
         [JsonProperty("startAt")]
@@ -306,6 +275,42 @@ namespace dittlassian.Objects.Jira
         [JsonProperty("worklogs")]
         public IList<object> Worklogs { get; set; }
     }
+    
+    public class Worklog
+    {
+        [JsonProperty("self")]
+        public string Self { get; set; }
+
+        [JsonProperty("author")]
+        public User Author { get; set; }
+
+        [JsonProperty("updateAuthor")]
+        public User UpdateAuthor { get; set; }
+
+        [JsonProperty("comment")]
+        public string Comment { get; set; }
+
+        [JsonProperty("created")]
+        public DateTime Created { get; set; }
+
+        [JsonProperty("updated")]
+        public DateTime Updated { get; set; }
+
+        [JsonProperty("started")]
+        public DateTime Started { get; set; }
+
+        [JsonProperty("timeSpent")]
+        public string TimeSpent { get; set; }
+
+        [JsonProperty("timeSpentSeconds")]
+        public long TimeSpentSeconds { get; set; }
+
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        [JsonProperty("issueId")]
+        public string IssueId { get; set; }
+    }
 
     public class Fields
     {
@@ -314,7 +319,7 @@ namespace dittlassian.Objects.Jira
         public Issuetype Issuetype { get; set; }
 
         [JsonProperty("timespent")]
-        public object Timespent { get; set; }
+        public int Timespent { get; set; }
 
         [JsonProperty("project")]
         public Project Project { get; set; }
@@ -323,19 +328,19 @@ namespace dittlassian.Objects.Jira
         public IList<object> FixVersions { get; set; }
 
         [JsonProperty("aggregatetimespent")]
-        public object Aggregatetimespent { get; set; }
+        public int Aggregatetimespent { get; set; }
 
         [JsonProperty("resolution")]
-        public object Resolution { get; set; }
+        public Resolution Resolution { get; set; }
 
         [JsonProperty("resolutiondate")]
-        public object Resolutiondate { get; set; }
+        public DateTime ResolutionDate { get; set; }
 
         [JsonProperty("workratio")]
         public int Workratio { get; set; }
 
         [JsonProperty("lastViewed")]
-        public object LastViewed { get; set; }
+        public DateTime LastViewed { get; set; }
 
         [JsonProperty("watches")]
         public Watches Watches { get; set; }
@@ -347,22 +352,22 @@ namespace dittlassian.Objects.Jira
         public Priority Priority { get; set; }
 
         [JsonProperty("labels")]
-        public IList<object> Labels { get; set; }        
+        public IList<string> Labels { get; set; }        
 
         [JsonProperty("timeestimate")]
-        public object Timeestimate { get; set; }
+        public int TimeEstimate { get; set; }
 
         [JsonProperty("aggregatetimeoriginalestimate")]
-        public object Aggregatetimeoriginalestimate { get; set; }
+        public int AggregateTimeOriginalEstimate { get; set; }
 
         [JsonProperty("versions")]
         public IList<object> Versions { get; set; }
 
         [JsonProperty("issuelinks")]
-        public IList<object> Issuelinks { get; set; }
+        public IList<IssueLink> IssueLinks { get; set; }
 
         [JsonProperty("assignee")]
-        public object Assignee { get; set; }
+        public User Assignee { get; set; }
 
         [JsonProperty("updated")]
         public DateTime Updated { get; set; }
@@ -371,34 +376,34 @@ namespace dittlassian.Objects.Jira
         public Status Status { get; set; }
 
         [JsonProperty("components")]
-        public IList<object> Components { get; set; }
+        public IList<Component> Components { get; set; }
 
         [JsonProperty("timeoriginalestimate")]
-        public object Timeoriginalestimate { get; set; }
+        public int TimeOriginalEstimate { get; set; }
 
         [JsonProperty("description")]
-        public object Description { get; set; }
+        public string Description { get; set; }
 
         [JsonProperty("timetracking")]
         public Timetracking Timetracking { get; set; }
 
         [JsonProperty("attachment")]
-        public IList<object> Attachment { get; set; }
+        public IList<Attachment> Attachment { get; set; }
 
         [JsonProperty("aggregatetimeestimate")]
-        public object Aggregatetimeestimate { get; set; }
+        public int AggregateTimeEstimate { get; set; }
 
         [JsonProperty("summary")]
         public string Summary { get; set; }
 
         [JsonProperty("creator")]
-        public Creator Creator { get; set; }
+        public User Creator { get; set; }
 
         [JsonProperty("subtasks")]
         public IList<object> Subtasks { get; set; }
 
         [JsonProperty("reporter")]
-        public Reporter Reporter { get; set; }
+        public User Reporter { get; set; }
 
         [JsonProperty("aggregateprogress")]
         public Aggregateprogress Aggregateprogress { get; set; }
@@ -407,19 +412,19 @@ namespace dittlassian.Objects.Jira
         public object Environment { get; set; }
 
         [JsonProperty("duedate")]
-        public object Duedate { get; set; }
+        public DateTime DueDate { get; set; }
 
         [JsonProperty("progress")]
         public ProgressData ProgressData { get; set; }
 
         [JsonProperty("comment")]
-        public Comment Comment { get; set; }
+        public CommentData CommentData { get; set; }
 
         [JsonProperty("votes")]
         public VotesData VotesData { get; set; }
 
         [JsonProperty("worklog")]
-        public Worklog Worklog { get; set; }
+        public WorklogData WorklogData { get; set; }
 
         [JsonExtensionData]
         public ExpandoObject CustomFields { get; set; }
@@ -439,5 +444,95 @@ namespace dittlassian.Objects.Jira
 
         [JsonProperty("fields")]
         public Fields Fields { get; set; }
+    }
+    
+    public class IssueLink
+    {
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        [JsonProperty("self")]
+        public string Self { get; set; }
+
+        [JsonProperty("type")]
+        public IssueLinkType Type { get; set; }
+
+        [JsonProperty("outwardIssue")]
+        public Issue OutwardIssue { get; set; }
+    }
+    
+    public class IssueLinkType
+    {
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("inward")]
+        public string Inward { get; set; }
+
+        [JsonProperty("outward")]
+        public string Outward { get; set; }
+
+        [JsonProperty("self")]
+        public string Self { get; set; }
+    }
+    
+    public class Component
+    {
+        [JsonProperty("self")]
+        public string Self { get; set; }
+
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+    }
+    
+    public class Attachment
+    {
+        [JsonProperty("self")]
+        public string Self { get; set; }
+
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        [JsonProperty("filename")]
+        public string Filename { get; set; }
+
+        [JsonProperty("author")]
+        public User Author { get; set; }
+
+        [JsonProperty("created")]
+        public DateTime Created { get; set; }
+
+        [JsonProperty("size")]
+        public long Size { get; set; }
+
+        [JsonProperty("mimeType")]
+        public string MimeType { get; set; }
+
+        [JsonProperty("content")]
+        public string Content { get; set; }
+    }
+    
+    public class Resolution
+    {
+        [JsonProperty("self")]
+        public string Self { get; set; }
+
+        [JsonProperty("id")]
+        public string Id { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
     }
 }

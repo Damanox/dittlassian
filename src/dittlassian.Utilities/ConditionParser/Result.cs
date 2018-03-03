@@ -1,11 +1,14 @@
-﻿namespace dittlassian.Utilities.ConditionParser
+﻿using System;
+
+namespace dittlassian.Utilities.ConditionParser
 {
     public enum ResultType
     {
         Decimal,
         String,
         Bool,
-        Object
+        Object,
+        Date
     }
 
     public class Result
@@ -14,6 +17,7 @@
         private bool? _bool;
         private decimal? _decimal;
         private string _string;
+        private DateTime? _date;
 
         public ResultType Type { get; set; }
 
@@ -56,6 +60,16 @@
                 _string = value;
             }
         }
+        
+        public DateTime? Date
+        {
+            get => _date;
+            set
+            {
+                Type = ResultType.Date;
+                _date = value;
+            }
+        }
 
         public override bool Equals(object obj)
         {
@@ -75,6 +89,8 @@
                     return Decimal.Equals(res.Decimal);
                 case ResultType.String:
                     return String.Equals(res.String);
+                case ResultType.Date:
+                    return Date.Equals(res.Date);
                 default:
                     return false;
             }

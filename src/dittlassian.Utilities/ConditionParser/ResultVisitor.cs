@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace dittlassian.Utilities.ConditionParser
 {
@@ -190,6 +192,10 @@ namespace dittlassian.Utilities.ConditionParser
         {
             var text = context.GetText();
             text = text.Substring(1, text.Length - 2);
+
+            if(DateTime.TryParse(text, out var date))
+                return new Result { Date = date };    
+            
             return new Result { String = text };
         }
     }

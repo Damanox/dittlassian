@@ -43,7 +43,7 @@ namespace dittlassian.PlayGround
 
                 temp["test"] = "Test";
 
-                var res = ConditionParserUtil.Parse("Issue.Fields.test == 'Test'", webhook);
+                var res = ConditionParserUtil.Parse("Issue.Fields.test == '2018-01-01 00:01:02'", webhook);
                 
                 var z = 0;
             }
