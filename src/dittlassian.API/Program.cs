@@ -42,7 +42,7 @@ namespace dittlassian.API
                 .ConfigureLogging((hostingContext, logging) =>
                 {
                     logging.AddConsole();
-                    logging.Services.AddSingleton<ILoggerProvider, ColoredConsoleLoggerProvider>();
+                  //  logging.Services.AddSingleton<ILoggerProvider, ColoredConsoleLoggerProvider>();
                 })
                 .UseStartup<Startup>()
                 .Build();

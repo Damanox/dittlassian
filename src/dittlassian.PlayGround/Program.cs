@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using dittlassian.DI;
+using dittlassian.Objects.Common;
 using dittlassian.Objects.Jira;
 using dittlassian.Utilities.ConditionParser;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Internal;
+using Microsoft.Extensions.Options;
 
 namespace dittlassian.PlayGround
 {
@@ -23,11 +26,29 @@ namespace dittlassian.PlayGround
         One,
         Two
     }
+
+    class Test
+    {
+        public readonly IOptions<Configuration> _conf;
+
+        public Test(IOptions<Configuration> conf)
+        {
+            _conf = conf;
+            var xzcds = 0;
+        }
+    }
+
+
     class Program
     {
 
         static void Main(string[] args)
         {
+            var x1 = DiContainer.Initilize(null);
+
+            x1.AddSingleton<Test>();
+
+            var result = x1.BuildServiceProvider().GetService<Test>();
             var x = (TestEnum) 1;
             var zzz = (TestEnum) int.MaxValue;
             var zz = 0;

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Dynamic;
+using dittlassian.Objects.Common.Interfaces;
 using Newtonsoft.Json;
 
 namespace dittlassian.Objects.Jira
 {
-    public class JiraWebHook
+    public class JiraWebHook : IWebHook
     {
 
         [JsonProperty("timestamp")]

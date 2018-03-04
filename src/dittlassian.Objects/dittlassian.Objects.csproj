@@ -8,4 +8,9 @@
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Confluence\" />
+    <Folder Include="Bitbucket\" />
+  </ItemGroup>
+
 </Project>
