@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dittlassian.API", "dittlass
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dittlassian.Objects", "dittlassian.Objects\dittlassian.Objects.csproj", "{2933EC50-0449-4F54-A022-38DD16A53C70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dittlassian.PlayGround", "dittlassian.PlayGround\dittlassian.PlayGround.csproj", "{1323EB7D-EFB9-41FA-AD45-C074D3622C5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dittlassian.PlayGround", "dittlassian.PlayGround\dittlassian.PlayGround.csproj", "{1323EB7D-EFB9-41FA-AD45-C074D3622C5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dittlassian.DI", "dittlassian.DI\dittlassian.DI.csproj", "{0447C572-53FB-4262-8BB7-A4080B016B7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dittlassian.Common", "dittlassian.Common\dittlassian.Common.csproj", "{0447C572-53FB-4262-8BB7-A4080B016B7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dittlassian.Utilities", "dittlassian.Utilities\dittlassian.Utilities.csproj", "{872E7FAB-BDA8-485E-B8B9-5746761EBC6C}"
 EndProject

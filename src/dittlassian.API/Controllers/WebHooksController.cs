@@ -1,5 +1,6 @@
 ﻿using dittlassian.Objects.Jira;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 
 namespace dittlassian.API.Controllers
 {
@@ -7,6 +8,10 @@ namespace dittlassian.API.Controllers
     [Route("api/WebHooks")]
     public class WebHooksController : Controller
     {
+        public WebHooksController(ILogger<WebHooksController> hooks)
+        {
+       //     hooks.LogInformation((LoggingEvents.GetItem, "Getting item {ID}", id);)
+        }
         [HttpPost]
         public void Bitbucket()
         {

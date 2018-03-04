@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using dittlassian.DI;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Console;
 
 namespace dittlassian.API
 {
@@ -35,6 +38,11 @@ namespace dittlassian.API
 
                     if (args != null)
                         builder.AddCommandLine(args);
+                })
+                .ConfigureLogging((hostingContext, logging) =>
+                {
+                    logging.AddConsole();
+                    logging.Services.AddSingleton<ILoggerProvider, ColoredConsoleLoggerProvider>();
                 })
                 .UseStartup<Startup>()
                 .Build();
