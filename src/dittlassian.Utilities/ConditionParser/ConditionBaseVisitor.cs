@@ -35,7 +35,7 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Result>, IConditionVisitor<Result> {
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ConditionParser.parse"/>.
+	/// Visit a parse tree produced by <see cref="AntlrConditionParser.parse"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -43,10 +43,10 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitParse([NotNull] ConditionParser.ParseContext context) { return VisitChildren(context); }
+	public virtual Result VisitParse([NotNull] AntlrConditionParser.ParseContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>binaryExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -54,10 +54,10 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitBinaryExpression([NotNull] ConditionParser.BinaryExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitBinaryExpression([NotNull] AntlrConditionParser.BinaryExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>decimalExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -65,10 +65,10 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitDecimalExpression([NotNull] ConditionParser.DecimalExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitDecimalExpression([NotNull] AntlrConditionParser.DecimalExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>stringExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -76,10 +76,10 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitStringExpression([NotNull] ConditionParser.StringExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitStringExpression([NotNull] AntlrConditionParser.StringExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>boolExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -87,10 +87,10 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitBoolExpression([NotNull] ConditionParser.BoolExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitBoolExpression([NotNull] AntlrConditionParser.BoolExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>identifierExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -98,10 +98,10 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitIdentifierExpression([NotNull] ConditionParser.IdentifierExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitIdentifierExpression([NotNull] AntlrConditionParser.IdentifierExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>notExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -109,10 +109,10 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitNotExpression([NotNull] ConditionParser.NotExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitNotExpression([NotNull] AntlrConditionParser.NotExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>parenExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -120,10 +120,10 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitParenExpression([NotNull] ConditionParser.ParenExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitParenExpression([NotNull] AntlrConditionParser.ParenExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
 	/// Visit a parse tree produced by the <c>comparatorExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -131,9 +131,9 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitComparatorExpression([NotNull] ConditionParser.ComparatorExpressionContext context) { return VisitChildren(context); }
+	public virtual Result VisitComparatorExpression([NotNull] AntlrConditionParser.ComparatorExpressionContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ConditionParser.comparator"/>.
+	/// Visit a parse tree produced by <see cref="AntlrConditionParser.comparator"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -141,9 +141,9 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitComparator([NotNull] ConditionParser.ComparatorContext context) { return VisitChildren(context); }
+	public virtual Result VisitComparator([NotNull] AntlrConditionParser.ComparatorContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ConditionParser.binary"/>.
+	/// Visit a parse tree produced by <see cref="AntlrConditionParser.binary"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -151,9 +151,9 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitBinary([NotNull] ConditionParser.BinaryContext context) { return VisitChildren(context); }
+	public virtual Result VisitBinary([NotNull] AntlrConditionParser.BinaryContext context) { return VisitChildren(context); }
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ConditionParser.bool"/>.
+	/// Visit a parse tree produced by <see cref="AntlrConditionParser.bool"/>.
 	/// <para>
 	/// The default implementation returns the result of calling <see cref="AbstractParseTreeVisitor{Result}.VisitChildren(IRuleNode)"/>
 	/// on <paramref name="context"/>.
@@ -161,6 +161,6 @@ public partial class ConditionBaseVisitor<Result> : AbstractParseTreeVisitor<Res
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	public virtual Result VisitBool([NotNull] ConditionParser.BoolContext context) { return VisitChildren(context); }
+	public virtual Result VisitBool([NotNull] AntlrConditionParser.BoolContext context) { return VisitChildren(context); }
 }
 } // namespace dittlassian.Utilities.ConditionParser

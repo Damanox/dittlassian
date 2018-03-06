@@ -26,91 +26,91 @@ using IToken = Antlr4.Runtime.IToken;
 
 /// <summary>
 /// This interface defines a complete generic visitor for a parse tree produced
-/// by <see cref="ConditionParser"/>.
+/// by <see cref="AntlrConditionParser"/>.
 /// </summary>
 /// <typeparam name="Result">The return type of the visit operation.</typeparam>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.7.1")]
 [System.CLSCompliant(false)]
 public interface IConditionVisitor<Result> : IParseTreeVisitor<Result> {
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ConditionParser.parse"/>.
+	/// Visit a parse tree produced by <see cref="AntlrConditionParser.parse"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitParse([NotNull] ConditionParser.ParseContext context);
+	Result VisitParse([NotNull] AntlrConditionParser.ParseContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>binaryExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitBinaryExpression([NotNull] ConditionParser.BinaryExpressionContext context);
+	Result VisitBinaryExpression([NotNull] AntlrConditionParser.BinaryExpressionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>decimalExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitDecimalExpression([NotNull] ConditionParser.DecimalExpressionContext context);
+	Result VisitDecimalExpression([NotNull] AntlrConditionParser.DecimalExpressionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>stringExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitStringExpression([NotNull] ConditionParser.StringExpressionContext context);
+	Result VisitStringExpression([NotNull] AntlrConditionParser.StringExpressionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>boolExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitBoolExpression([NotNull] ConditionParser.BoolExpressionContext context);
+	Result VisitBoolExpression([NotNull] AntlrConditionParser.BoolExpressionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>identifierExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitIdentifierExpression([NotNull] ConditionParser.IdentifierExpressionContext context);
+	Result VisitIdentifierExpression([NotNull] AntlrConditionParser.IdentifierExpressionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>notExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitNotExpression([NotNull] ConditionParser.NotExpressionContext context);
+	Result VisitNotExpression([NotNull] AntlrConditionParser.NotExpressionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>parenExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitParenExpression([NotNull] ConditionParser.ParenExpressionContext context);
+	Result VisitParenExpression([NotNull] AntlrConditionParser.ParenExpressionContext context);
 	/// <summary>
 	/// Visit a parse tree produced by the <c>comparatorExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitComparatorExpression([NotNull] ConditionParser.ComparatorExpressionContext context);
+	Result VisitComparatorExpression([NotNull] AntlrConditionParser.ComparatorExpressionContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ConditionParser.comparator"/>.
+	/// Visit a parse tree produced by <see cref="AntlrConditionParser.comparator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitComparator([NotNull] ConditionParser.ComparatorContext context);
+	Result VisitComparator([NotNull] AntlrConditionParser.ComparatorContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ConditionParser.binary"/>.
+	/// Visit a parse tree produced by <see cref="AntlrConditionParser.binary"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitBinary([NotNull] ConditionParser.BinaryContext context);
+	Result VisitBinary([NotNull] AntlrConditionParser.BinaryContext context);
 	/// <summary>
-	/// Visit a parse tree produced by <see cref="ConditionParser.bool"/>.
+	/// Visit a parse tree produced by <see cref="AntlrConditionParser.bool"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	/// <return>The visitor result.</return>
-	Result VisitBool([NotNull] ConditionParser.BoolContext context);
+	Result VisitBool([NotNull] AntlrConditionParser.BoolContext context);
 }
 } // namespace dittlassian.Utilities.ConditionParser

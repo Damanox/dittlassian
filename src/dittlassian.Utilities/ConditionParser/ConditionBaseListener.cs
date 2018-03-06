@@ -36,165 +36,165 @@ using ParserRuleContext = Antlr4.Runtime.ParserRuleContext;
 [System.CLSCompliant(false)]
 public partial class ConditionBaseListener : IConditionListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ConditionParser.parse"/>.
+	/// Enter a parse tree produced by <see cref="AntlrConditionParser.parse"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterParse([NotNull] ConditionParser.ParseContext context) { }
+	public virtual void EnterParse([NotNull] AntlrConditionParser.ParseContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ConditionParser.parse"/>.
+	/// Exit a parse tree produced by <see cref="AntlrConditionParser.parse"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitParse([NotNull] ConditionParser.ParseContext context) { }
+	public virtual void ExitParse([NotNull] AntlrConditionParser.ParseContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>binaryExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterBinaryExpression([NotNull] ConditionParser.BinaryExpressionContext context) { }
+	public virtual void EnterBinaryExpression([NotNull] AntlrConditionParser.BinaryExpressionContext context) { }
 	/// <summary>
 	/// Exit a parse tree produced by the <c>binaryExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitBinaryExpression([NotNull] ConditionParser.BinaryExpressionContext context) { }
+	public virtual void ExitBinaryExpression([NotNull] AntlrConditionParser.BinaryExpressionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>decimalExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterDecimalExpression([NotNull] ConditionParser.DecimalExpressionContext context) { }
+	public virtual void EnterDecimalExpression([NotNull] AntlrConditionParser.DecimalExpressionContext context) { }
 	/// <summary>
 	/// Exit a parse tree produced by the <c>decimalExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitDecimalExpression([NotNull] ConditionParser.DecimalExpressionContext context) { }
+	public virtual void ExitDecimalExpression([NotNull] AntlrConditionParser.DecimalExpressionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>stringExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterStringExpression([NotNull] ConditionParser.StringExpressionContext context) { }
+	public virtual void EnterStringExpression([NotNull] AntlrConditionParser.StringExpressionContext context) { }
 	/// <summary>
 	/// Exit a parse tree produced by the <c>stringExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitStringExpression([NotNull] ConditionParser.StringExpressionContext context) { }
+	public virtual void ExitStringExpression([NotNull] AntlrConditionParser.StringExpressionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>boolExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterBoolExpression([NotNull] ConditionParser.BoolExpressionContext context) { }
+	public virtual void EnterBoolExpression([NotNull] AntlrConditionParser.BoolExpressionContext context) { }
 	/// <summary>
 	/// Exit a parse tree produced by the <c>boolExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitBoolExpression([NotNull] ConditionParser.BoolExpressionContext context) { }
+	public virtual void ExitBoolExpression([NotNull] AntlrConditionParser.BoolExpressionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>identifierExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterIdentifierExpression([NotNull] ConditionParser.IdentifierExpressionContext context) { }
+	public virtual void EnterIdentifierExpression([NotNull] AntlrConditionParser.IdentifierExpressionContext context) { }
 	/// <summary>
 	/// Exit a parse tree produced by the <c>identifierExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitIdentifierExpression([NotNull] ConditionParser.IdentifierExpressionContext context) { }
+	public virtual void ExitIdentifierExpression([NotNull] AntlrConditionParser.IdentifierExpressionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>notExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterNotExpression([NotNull] ConditionParser.NotExpressionContext context) { }
+	public virtual void EnterNotExpression([NotNull] AntlrConditionParser.NotExpressionContext context) { }
 	/// <summary>
 	/// Exit a parse tree produced by the <c>notExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitNotExpression([NotNull] ConditionParser.NotExpressionContext context) { }
+	public virtual void ExitNotExpression([NotNull] AntlrConditionParser.NotExpressionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>parenExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterParenExpression([NotNull] ConditionParser.ParenExpressionContext context) { }
+	public virtual void EnterParenExpression([NotNull] AntlrConditionParser.ParenExpressionContext context) { }
 	/// <summary>
 	/// Exit a parse tree produced by the <c>parenExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitParenExpression([NotNull] ConditionParser.ParenExpressionContext context) { }
+	public virtual void ExitParenExpression([NotNull] AntlrConditionParser.ParenExpressionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>comparatorExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterComparatorExpression([NotNull] ConditionParser.ComparatorExpressionContext context) { }
+	public virtual void EnterComparatorExpression([NotNull] AntlrConditionParser.ComparatorExpressionContext context) { }
 	/// <summary>
 	/// Exit a parse tree produced by the <c>comparatorExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitComparatorExpression([NotNull] ConditionParser.ComparatorExpressionContext context) { }
+	public virtual void ExitComparatorExpression([NotNull] AntlrConditionParser.ComparatorExpressionContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ConditionParser.comparator"/>.
+	/// Enter a parse tree produced by <see cref="AntlrConditionParser.comparator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterComparator([NotNull] ConditionParser.ComparatorContext context) { }
+	public virtual void EnterComparator([NotNull] AntlrConditionParser.ComparatorContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ConditionParser.comparator"/>.
+	/// Exit a parse tree produced by <see cref="AntlrConditionParser.comparator"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitComparator([NotNull] ConditionParser.ComparatorContext context) { }
+	public virtual void ExitComparator([NotNull] AntlrConditionParser.ComparatorContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ConditionParser.binary"/>.
+	/// Enter a parse tree produced by <see cref="AntlrConditionParser.binary"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterBinary([NotNull] ConditionParser.BinaryContext context) { }
+	public virtual void EnterBinary([NotNull] AntlrConditionParser.BinaryContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ConditionParser.binary"/>.
+	/// Exit a parse tree produced by <see cref="AntlrConditionParser.binary"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitBinary([NotNull] ConditionParser.BinaryContext context) { }
+	public virtual void ExitBinary([NotNull] AntlrConditionParser.BinaryContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ConditionParser.bool"/>.
+	/// Enter a parse tree produced by <see cref="AntlrConditionParser.bool"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterBool([NotNull] ConditionParser.BoolContext context) { }
+	public virtual void EnterBool([NotNull] AntlrConditionParser.BoolContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ConditionParser.bool"/>.
+	/// Exit a parse tree produced by <see cref="AntlrConditionParser.bool"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitBool([NotNull] ConditionParser.BoolContext context) { }
+	public virtual void ExitBool([NotNull] AntlrConditionParser.BoolContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>

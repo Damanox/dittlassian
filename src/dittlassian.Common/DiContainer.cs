@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
-using dittlassian.Common.Models;
+﻿using dittlassian.Common.Models;
 using dittlassian.Objects.Common;
 using dittlassian.Services.Messages;
+using dittlassian.Utilities.ConditionParser;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -14,7 +14,7 @@ namespace dittlassian.Common
 
         public static IServiceCollection AddCustomServices(this IServiceCollection services)
         {
-            return Initilize(services);
+            return Initialize(services);
         }
 
         public static IConfigurationBuilder AddCustomPaths(this IConfigurationBuilder builder)
@@ -32,7 +32,7 @@ namespace dittlassian.Common
             return builder;
         }
 
-        public static IServiceCollection Initilize(IServiceCollection serviceCollection = null)
+        public static IServiceCollection Initialize(IServiceCollection serviceCollection = null)
         {
             if (IsInitialized)
                 return serviceCollection;
@@ -51,6 +51,7 @@ namespace dittlassian.Common
             serviceCollection.AddOptions();
 
             serviceCollection.AddSingleton<DiscordMessageService>();
+            serviceCollection.AddSingleton<ConditionParser>();
 
             var iConfig = serviceCollection.BuildServiceProvider().GetService<IConfiguration>();
 

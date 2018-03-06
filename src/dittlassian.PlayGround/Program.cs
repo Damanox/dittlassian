@@ -45,7 +45,7 @@ namespace dittlassian.PlayGround
 
         static void Main(string[] args)
         {
-            var x1 = DiContainer.Initilize(null);
+            var x1 = DiContainer.Initialize(null);
 
             x1.AddSingleton<Test>();
 
@@ -95,7 +95,9 @@ namespace dittlassian.PlayGround
 
                 temp["test"] = "Test";
 
-                var res = ConditionParserUtil.Parse("Issue.Fields.test == '2018-01-01 00:01:02'", webhook);
+                var cp = x1.BuildServiceProvider().GetService<ConditionParser>();
+
+                var res = cp.Parse("Issue.Id == 'BB-1000'", webhook);
                 
                 var z = 0;
             }

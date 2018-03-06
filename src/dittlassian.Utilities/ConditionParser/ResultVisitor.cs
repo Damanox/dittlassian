@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
@@ -15,7 +16,7 @@ namespace dittlassian.Utilities.ConditionParser
             _param = param;
         }
 
-        public override Result VisitIdentifierExpression(ConditionParser.IdentifierExpressionContext context)
+        public override Result VisitIdentifierExpression(AntlrConditionParser.IdentifierExpressionContext context)
         {
             var identifier = context.IDENTIFIER().GetText();
 
@@ -23,6 +24,9 @@ namespace dittlassian.Utilities.ConditionParser
             foreach(var propName in identifier.Split('.'))
             {
                 var prop = obj.GetType().GetRuntimeProperty(propName);
+
+                if(prop == null)
+                    prop = obj.GetType().GetRuntimeProperties().FirstOrDefault(p => string.Equals(p.Name, propName, StringComparison.InvariantCultureIgnoreCase));
 
                 if(prop == null)
                 {
@@ -90,17 +94,17 @@ namespace dittlassian.Utilities.ConditionParser
             return result;
         }
 
-        public override Result VisitParenExpression(ConditionParser.ParenExpressionContext context)
+        public override Result VisitParenExpression(AntlrConditionParser.ParenExpressionContext context)
         {
             return Visit(context.expression());
         }
 
-        public override Result VisitNotExpression(ConditionParser.NotExpressionContext context)
+        public override Result VisitNotExpression(AntlrConditionParser.NotExpressionContext context)
         {
             return new Result { Bool = !Visit(context.expression()).Bool.GetValueOrDefault() };
         }
 
-        public override Result VisitBinaryExpression(ConditionParser.BinaryExpressionContext context)
+        public override Result VisitBinaryExpression(AntlrConditionParser.BinaryExpressionContext context)
         {
             var left = Visit(context.left);
             var right = Visit(context.right);
@@ -117,7 +121,7 @@ namespace dittlassian.Utilities.ConditionParser
             return new Result();
         }
 
-        public override Result VisitComparatorExpression(ConditionParser.ComparatorExpressionContext context)
+        public override Result VisitComparatorExpression(AntlrConditionParser.ComparatorExpressionContext context)
         {
             var left = Visit(context.left);
             var right = Visit(context.right);
@@ -178,17 +182,17 @@ namespace dittlassian.Utilities.ConditionParser
             return new Result();
         }
 
-        public override Result VisitBool(ConditionParser.BoolContext context)
+        public override Result VisitBool(AntlrConditionParser.BoolContext context)
         {
             return new Result { Bool = bool.Parse(context.GetText()) };
         }
 
-        public override Result VisitDecimalExpression(ConditionParser.DecimalExpressionContext context)
+        public override Result VisitDecimalExpression(AntlrConditionParser.DecimalExpressionContext context)
         {
             return new Result { Decimal = decimal.Parse(context.GetText()) };
         }
 
-        public override Result VisitStringExpression(ConditionParser.StringExpressionContext context)
+        public override Result VisitStringExpression(AntlrConditionParser.StringExpressionContext context)
         {
             var text = context.GetText();
             text = text.Substring(1, text.Length - 2);

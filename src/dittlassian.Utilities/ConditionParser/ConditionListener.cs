@@ -26,146 +26,146 @@ using IToken = Antlr4.Runtime.IToken;
 
 /// <summary>
 /// This interface defines a complete listener for a parse tree produced by
-/// <see cref="ConditionParser"/>.
+/// <see cref="AntlrConditionParser"/>.
 /// </summary>
 [System.CodeDom.Compiler.GeneratedCode("ANTLR", "4.7.1")]
 [System.CLSCompliant(false)]
 public interface IConditionListener : IParseTreeListener {
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ConditionParser.parse"/>.
+	/// Enter a parse tree produced by <see cref="AntlrConditionParser.parse"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterParse([NotNull] ConditionParser.ParseContext context);
+	void EnterParse([NotNull] AntlrConditionParser.ParseContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ConditionParser.parse"/>.
+	/// Exit a parse tree produced by <see cref="AntlrConditionParser.parse"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitParse([NotNull] ConditionParser.ParseContext context);
+	void ExitParse([NotNull] AntlrConditionParser.ParseContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>binaryExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterBinaryExpression([NotNull] ConditionParser.BinaryExpressionContext context);
+	void EnterBinaryExpression([NotNull] AntlrConditionParser.BinaryExpressionContext context);
 	/// <summary>
 	/// Exit a parse tree produced by the <c>binaryExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitBinaryExpression([NotNull] ConditionParser.BinaryExpressionContext context);
+	void ExitBinaryExpression([NotNull] AntlrConditionParser.BinaryExpressionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>decimalExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterDecimalExpression([NotNull] ConditionParser.DecimalExpressionContext context);
+	void EnterDecimalExpression([NotNull] AntlrConditionParser.DecimalExpressionContext context);
 	/// <summary>
 	/// Exit a parse tree produced by the <c>decimalExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitDecimalExpression([NotNull] ConditionParser.DecimalExpressionContext context);
+	void ExitDecimalExpression([NotNull] AntlrConditionParser.DecimalExpressionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>stringExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterStringExpression([NotNull] ConditionParser.StringExpressionContext context);
+	void EnterStringExpression([NotNull] AntlrConditionParser.StringExpressionContext context);
 	/// <summary>
 	/// Exit a parse tree produced by the <c>stringExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitStringExpression([NotNull] ConditionParser.StringExpressionContext context);
+	void ExitStringExpression([NotNull] AntlrConditionParser.StringExpressionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>boolExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterBoolExpression([NotNull] ConditionParser.BoolExpressionContext context);
+	void EnterBoolExpression([NotNull] AntlrConditionParser.BoolExpressionContext context);
 	/// <summary>
 	/// Exit a parse tree produced by the <c>boolExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitBoolExpression([NotNull] ConditionParser.BoolExpressionContext context);
+	void ExitBoolExpression([NotNull] AntlrConditionParser.BoolExpressionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>identifierExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterIdentifierExpression([NotNull] ConditionParser.IdentifierExpressionContext context);
+	void EnterIdentifierExpression([NotNull] AntlrConditionParser.IdentifierExpressionContext context);
 	/// <summary>
 	/// Exit a parse tree produced by the <c>identifierExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitIdentifierExpression([NotNull] ConditionParser.IdentifierExpressionContext context);
+	void ExitIdentifierExpression([NotNull] AntlrConditionParser.IdentifierExpressionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>notExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterNotExpression([NotNull] ConditionParser.NotExpressionContext context);
+	void EnterNotExpression([NotNull] AntlrConditionParser.NotExpressionContext context);
 	/// <summary>
 	/// Exit a parse tree produced by the <c>notExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitNotExpression([NotNull] ConditionParser.NotExpressionContext context);
+	void ExitNotExpression([NotNull] AntlrConditionParser.NotExpressionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>parenExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterParenExpression([NotNull] ConditionParser.ParenExpressionContext context);
+	void EnterParenExpression([NotNull] AntlrConditionParser.ParenExpressionContext context);
 	/// <summary>
 	/// Exit a parse tree produced by the <c>parenExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitParenExpression([NotNull] ConditionParser.ParenExpressionContext context);
+	void ExitParenExpression([NotNull] AntlrConditionParser.ParenExpressionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>comparatorExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterComparatorExpression([NotNull] ConditionParser.ComparatorExpressionContext context);
+	void EnterComparatorExpression([NotNull] AntlrConditionParser.ComparatorExpressionContext context);
 	/// <summary>
 	/// Exit a parse tree produced by the <c>comparatorExpression</c>
-	/// labeled alternative in <see cref="ConditionParser.expression"/>.
+	/// labeled alternative in <see cref="AntlrConditionParser.expression"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitComparatorExpression([NotNull] ConditionParser.ComparatorExpressionContext context);
+	void ExitComparatorExpression([NotNull] AntlrConditionParser.ComparatorExpressionContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ConditionParser.comparator"/>.
+	/// Enter a parse tree produced by <see cref="AntlrConditionParser.comparator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterComparator([NotNull] ConditionParser.ComparatorContext context);
+	void EnterComparator([NotNull] AntlrConditionParser.ComparatorContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ConditionParser.comparator"/>.
+	/// Exit a parse tree produced by <see cref="AntlrConditionParser.comparator"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitComparator([NotNull] ConditionParser.ComparatorContext context);
+	void ExitComparator([NotNull] AntlrConditionParser.ComparatorContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ConditionParser.binary"/>.
+	/// Enter a parse tree produced by <see cref="AntlrConditionParser.binary"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterBinary([NotNull] ConditionParser.BinaryContext context);
+	void EnterBinary([NotNull] AntlrConditionParser.BinaryContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ConditionParser.binary"/>.
+	/// Exit a parse tree produced by <see cref="AntlrConditionParser.binary"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitBinary([NotNull] ConditionParser.BinaryContext context);
+	void ExitBinary([NotNull] AntlrConditionParser.BinaryContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ConditionParser.bool"/>.
+	/// Enter a parse tree produced by <see cref="AntlrConditionParser.bool"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterBool([NotNull] ConditionParser.BoolContext context);
+	void EnterBool([NotNull] AntlrConditionParser.BoolContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ConditionParser.bool"/>.
+	/// Exit a parse tree produced by <see cref="AntlrConditionParser.bool"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitBool([NotNull] ConditionParser.BoolContext context);
+	void ExitBool([NotNull] AntlrConditionParser.BoolContext context);
 }
 } // namespace dittlassian.Utilities.ConditionParser
