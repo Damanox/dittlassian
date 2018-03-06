@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\dittlassian.Objects\dittlassian.Objects.csproj" />
+    <ProjectReference Include="..\dittlassian.Utilities\dittlassian.Utilities.csproj" />
   </ItemGroup>
 
 </Project>

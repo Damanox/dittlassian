@@ -1,28 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
+using dittlassian.Common.Models;
 using dittlassian.Objects.Common;
 using dittlassian.Services.Messages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Newtonsoft.Json;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace dittlassian.DI
+namespace dittlassian.Common
 {
     public static class DiContainer
     {
         private static bool IsInitialized { get; set; }
 
-        public static IServiceCollection InitializeCustomServices(this IServiceCollection services)
+        public static IServiceCollection AddCustomServices(this IServiceCollection services)
         {
             return Initilize(services);
         }
 
-        public static IConfigurationBuilder ConfigureCustomPaths(this IConfigurationBuilder builder)
+        public static IConfigurationBuilder AddCustomPaths(this IConfigurationBuilder builder)
         {
+            builder.AddJsonFile("environment.json", optional: false, reloadOnChange: true)
+                .AddJsonFile("bot.config.json", optional: false, reloadOnChange: true);
+
+            int.TryParse(builder.Build()["Environment"], out var result);
+
+            var currentEnvironment = (Environment) result;
+
+            builder.AddJsonFile($"bot.{currentEnvironment.ToString().ToLowerInvariant()}.config.json", optional: true,
+                reloadOnChange: true);
+
             return builder;
         }
 
@@ -37,37 +43,21 @@ namespace dittlassian.DI
             {
                 serviceCollection = new ServiceCollection();
 
-                var configurationBuilder = new ConfigurationBuilder().ConfigureCustomPaths();
+                var configurationBuilder = new ConfigurationBuilder().AddCustomPaths();
 
                 serviceCollection.AddSingleton<IConfiguration>(serviceProvider => configurationBuilder.Build());
             }
 
-            serviceCollection.AddSingleton<DiscordMessageService>();
-
             serviceCollection.AddOptions();
 
-            var iConfig = serviceCollection.BuildServiceProvider();
+            serviceCollection.AddSingleton<DiscordMessageService>();
 
-            serviceCollection.Configure<Configuration>(y =>
-            {
-                y.Discord = new DiscordConfiguration()
-                {
+            var iConfig = serviceCollection.BuildServiceProvider().GetService<IConfiguration>();
 
-                };
-                y.Rules = new List<Rule>
-                {
-                    new Rule()
-                    {
-                        Condition = "abcd"
-                    }
-                };
-
-                return;
-            });
-            // Initialize serviceCollection
+            serviceCollection.Configure<Configuration>(iConfig);
 
             var a = serviceCollection.BuildServiceProvider().GetService<IOptions<Configuration>>();
-            var a2= serviceCollection.BuildServiceProvider().GetService<Configuration>();
+
             return serviceCollection;
         }
     }

@@ -16,6 +16,8 @@ namespace dittlassian.Objects.Common
 
     public class DiscordConfiguration
     {
+        public string ServerId { get; set; }
+        public string BotId;
     }
 
     public class Rule

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using dittlassian.Common;
 using dittlassian.DI;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
@@ -24,15 +25,10 @@ namespace dittlassian.API
             WebHost.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((context, builder) =>
                 {
-                    var env = context.HostingEnvironment;
-
                     builder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                        .AddJsonFile("bot.config.json", optional: false, reloadOnChange: true);
+                        .AddCustomPaths();
 
-                    if (env.IsDevelopment())
-                    {
-                        builder.AddJsonFile("bot.local.config.json", optional: false, reloadOnChange: true);
-                    }
+                    builder.AddCustomPaths();
 
                     builder.AddEnvironmentVariables();
 

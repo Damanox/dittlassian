@@ -196,3 +196,5 @@ _Pvt_Extensions
 #Project specific settings
 .idea*/
 bot\.local\.config\.json
+
+src/dittlassian\.API/bot\.development\.config\.json
