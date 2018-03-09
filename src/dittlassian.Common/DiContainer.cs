@@ -2,6 +2,7 @@
 using dittlassian.Objects.Common;
 using dittlassian.Services.Messages;
 using dittlassian.Utilities.ConditionParser;
+using DSharpPlus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -57,7 +58,16 @@ namespace dittlassian.Common
 
             serviceCollection.Configure<Configuration>(iConfig);
 
-            var a = serviceCollection.BuildServiceProvider().GetService<IOptions<Configuration>>();
+            var a = serviceCollection.BuildServiceProvider().GetService<IOptions<Configuration>>().Value;
+
+            serviceCollection.AddScoped<DiscordClient>(y => new DiscordClient(new DSharpPlus.DiscordConfiguration()
+            {
+                AutoReconnect = true,
+                AutomaticGuildSync = true,
+                EnableCompression = true,
+                TokenType = TokenType.Bot,
+                Token = a.Discord.Token
+            }));
 
             return serviceCollection;
         }

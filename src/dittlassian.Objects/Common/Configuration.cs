@@ -17,7 +17,8 @@ namespace dittlassian.Objects.Common
     public class DiscordConfiguration
     {
         public string ServerId { get; set; }
-        public string BotId;
+        public string BotId { get; set; }
+        public string Token { get; set; }
     }
 
     public class Rule
@@ -29,6 +30,6 @@ namespace dittlassian.Objects.Common
         public string Condition { get; set; }
 
         [JsonProperty("channelIds")]
-        public List<string> ChannelIds { get; set; }
+        public List<ulong> ChannelIds { get; set; }
     }
 }
