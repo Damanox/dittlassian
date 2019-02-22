@@ -20,7 +20,7 @@ namespace dittlassian.Common
 
         public static IConfigurationBuilder AddCustomPaths(this IConfigurationBuilder builder)
         {
-            builder.AddJsonFile("environment.json", optional: false, reloadOnChange: true)
+            builder.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile("bot.config.json", optional: false, reloadOnChange: true);
 
             int.TryParse(builder.Build()["Environment"], out var result);
@@ -28,7 +28,8 @@ namespace dittlassian.Common
             var currentEnvironment = (Environment) result;
 
             builder.AddJsonFile($"bot.{currentEnvironment.ToString().ToLowerInvariant()}.config.json", optional: true,
-                reloadOnChange: true);
+                reloadOnChange: true)
+                .AddJsonFile($"appsettings.{currentEnvironment.ToString().ToLowerInvariant()}.json", optional:true, reloadOnChange:true);
 
             return builder;
         }
@@ -51,7 +52,7 @@ namespace dittlassian.Common
 
             serviceCollection.AddOptions();
 
-            serviceCollection.AddSingleton<DiscordMessageService>();
+            serviceCollection.AddScoped<DiscordMessageService>();
             serviceCollection.AddSingleton<ConditionParser>();
 
             var iConfig = serviceCollection.BuildServiceProvider().GetService<IConfiguration>();
