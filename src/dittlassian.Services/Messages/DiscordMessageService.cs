@@ -76,12 +76,9 @@ namespace dittlassian.Services.Messages
 
             var color = GetColor(hook?.Action);
 
-            var description = "BASIC DETAILS";
-
             builder.WithTitle(title)
                 .WithTimestamp(DateTime.Now)
                 .WithColor(color)
-                .WithDescription(description)
                 .WithUrl(hook?.Url)
                 .AddField("Repository:", hook?.FromRepoName, true)
                 .AddField("From Branch:", hook?.FromBranch, true)
@@ -110,6 +107,5 @@ namespace dittlassian.Services.Messages
                     return DiscordColor.Cyan;
             }
         }
-
     }
 }
