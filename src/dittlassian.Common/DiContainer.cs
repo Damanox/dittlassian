@@ -52,7 +52,7 @@ namespace dittlassian.Common
 
             serviceCollection.AddOptions();
 
-            serviceCollection.AddSingleton<DiscordMessageService>();
+            serviceCollection.AddScoped<DiscordMessageService>();
             serviceCollection.AddSingleton<ConditionParser>();
 
             var iConfig = serviceCollection.BuildServiceProvider().GetService<IConfiguration>();

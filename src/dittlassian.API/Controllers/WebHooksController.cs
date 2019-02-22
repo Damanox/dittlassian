@@ -23,20 +23,20 @@ namespace dittlassian.API.Controllers
             _configuration = configuration;
             //     hooks.LogInformation((LoggingEvents.GetItem, "Getting item {ID}", id);)
         }
-         [HttpPost]
-                [Consumes("text/plain")]
-                public void Bitbucket()
-                {
-                    var webHook = "";
-                    
-                    using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
-                    {  
-                       webHook =  reader.ReadToEndAsync().Result;
-                    }
-                    
-                    _discordMessageService.ProcessWebHook(webHook, _configuration?.Value);
-                  
-                }
+
+        [HttpPost]
+        [Consumes("text/plain")]
+        public void Bitbucket()
+        {
+            var webHook = "";
+
+            using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+            {
+                webHook = reader.ReadToEndAsync().Result;
+            }
+
+            _discordMessageService.ProcessWebHook(webHook, _configuration?.Value);
+        }
 
 
         [HttpPost]
