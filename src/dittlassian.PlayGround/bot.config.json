@@ -2,7 +2,7 @@
   "discord": {
     "serverId": "123",
     "botId": "",
-    "botToken": ""
+    "token": ""
   },
   "rules": [
     {

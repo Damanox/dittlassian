@@ -1,4 +1,6 @@
-﻿using dittlassian.Objects.Common;
+﻿using System.IO;
+using System.Text;
+using dittlassian.Objects.Common;
 using dittlassian.Objects.Jira;
 using dittlassian.Services.Messages;
 using Microsoft.AspNetCore.Mvc;
@@ -21,11 +23,21 @@ namespace dittlassian.API.Controllers
             _configuration = configuration;
             //     hooks.LogInformation((LoggingEvents.GetItem, "Getting item {ID}", id);)
         }
-        [HttpPost]
-        public void Bitbucket()
-        {
-            return;
-        }
+         [HttpPost]
+                [Consumes("text/plain")]
+                public void Bitbucket()
+                {
+                    var webHook = "";
+                    
+                    using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+                    {  
+                       webHook =  reader.ReadToEndAsync().Result;
+                    }
+                    
+                    _discordMessageService.ProcessWebHook(webHook, _configuration?.Value);
+                  
+                }
+
 
         [HttpPost]
         public void Jira(JiraWebHook webHook)

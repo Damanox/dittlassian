@@ -6,6 +6,6 @@ namespace dittlassian.Objects.Common.Interfaces
 {
     public interface IMessageService
     {
-        bool ProcessWebHook(IWebHook webHook, Configuration configuration);
+        bool ProcessWebHook(object webHook, Configuration configuration);
     }
 }

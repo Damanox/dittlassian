@@ -1,10 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using dittlassian.Objects.BitBucket;
 using dittlassian.Objects.Common;
 using dittlassian.Objects.Common.Interfaces;
 using dittlassian.Objects.Jira;
 using dittlassian.Utilities.ConditionParser;
 using DSharpPlus;
+using DSharpPlus.Entities;
 using Microsoft.Extensions.Options;
 
 namespace dittlassian.Services.Messages
@@ -22,7 +25,7 @@ namespace dittlassian.Services.Messages
             _configuration = configuration.Value;
         }
 
-        public bool ProcessWebHook(IWebHook webHook, Configuration configuration)
+        public bool ProcessWebHook(object webHook, Configuration configuration)
         {
             var source = Source.Bitbucket;
 
@@ -34,25 +37,79 @@ namespace dittlassian.Services.Messages
             }
 
             var channels = configuration.Rules.Where(x =>
-                    x.Source == source && _conditionParser.Parse(x.Condition, webHook)).SelectMany(x => x.ChannelIds)
+                    x.Source == source).SelectMany(x => x.ChannelIds)
                 .ToHashSet();
+            
+            SendMessage(channels.ToList(), webHook.ToString());
 
             return true;
+
         }
 
-        private void SendMessage(List<ulong> channelIds)
+       private void SendMessage(List<ulong> channelIds, string message)
         {
             _discordClient.ConnectAsync().GetAwaiter().GetResult();
 
-            var guildData = _discordClient.Guilds.FirstOrDefault(x => x.Key == ulong.Parse(_configuration.Discord.ServerId)).Value;
+            var guild = _discordClient.GetGuildAsync(ulong.Parse(_configuration.Discord.ServerId)).Result;
 
-            foreach (var channel in guildData.Channels)
+            foreach (var channel in guild.Channels)
             {
                 if(!channelIds.Contains(channel.Id))
                     continue;
 
-                // Send message
+                try
+                {
+                    _discordClient.SendMessageAsync(channel, null, false, CreateEmbeddedObj(message)).GetAwaiter().GetResult();
+                }
+                catch (Exception) { }
             }
         }
+        
+        private DiscordEmbed CreateEmbeddedObj(string text)
+        {
+            var hook = new BitBucketWebhook(text);
+            
+            var builder = new DiscordEmbedBuilder();
+
+            var title =
+                $"{hook?.UserName} {hook?.Action?.ToUpper()} pull request {hook?.Title} by {hook?.AuthorDisplayName}";
+
+            var color = GetColor(hook?.Action);
+
+            var description = "BASIC DETAILS";
+
+            builder.WithTitle(title)
+                .WithTimestamp(DateTime.Now)
+                .WithColor(color)
+                .WithDescription(description)
+                .WithUrl(hook?.Url)
+                .AddField("Repository:", hook?.FromRepoName, true)
+                .AddField("From Branch:", hook?.FromBranch, true)
+                .AddField("To Branch:", hook?.ToBranch, true)
+                .AddField("Approve Counts:", hook?.ParticipantsApprovedCount.FirstOrDefault() ?? "", true);
+
+            return builder.Build();
+        }
+
+        private DiscordColor GetColor(string action)
+        {
+            switch (action)
+            {
+                case "reopened":
+                case "opened":
+                    return DiscordColor.Yellow;  
+                case "declined":
+                    return DiscordColor.IndianRed; 
+                case "commented":
+                    return DiscordColor.Blue; 
+                case "updated":
+                    return DiscordColor.Orange;
+                case "approved":
+                    return DiscordColor.Green;
+                default:
+                    return DiscordColor.Cyan;
+            }
+        }
+
     }
 }
